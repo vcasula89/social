@@ -7,7 +7,7 @@ export default [
         Joi.object().keys({
             displayName: Joi.string().required(),
             email: Joi.string().required(),
-            password: Joi.string().required(),
+            password: Joi.string().required().min(8).alphanum(),
         })
     ),
 ]

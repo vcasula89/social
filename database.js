@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-const dbName = 'clustertodolist'
+const dbName = 'social'
 const user='valentinacasula70'
 
 const password='XIXxCtDSJp5yt0jL'

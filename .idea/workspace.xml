@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="">
+    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="Rimozione activitySchema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validator/user/createValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validator/user/createValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,9 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Node.js.server.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.createUserController.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.server.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.userSchema.js.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.userService.js.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -86,7 +90,18 @@
       <workItem from="1735654668048" duration="361000" />
       <workItem from="1735655592063" duration="761000" />
       <workItem from="1735747755585" duration="2401000" />
+      <workItem from="1735751801132" duration="2517000" />
+      <workItem from="1735837820192" duration="1121000" />
     </task>
+    <task id="LOCAL-00001" summary="Rimozione activitySchema">
+      <option name="closed" value="true" />
+      <created>1735752209466</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735752209466</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,5 +117,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Rimozione activitySchema" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rimozione activitySchema" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controller/user/createUserController.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
