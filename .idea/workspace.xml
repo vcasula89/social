@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="Rimozione activitySchema">
+    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="Validazione requisiti password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validator/user/createValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validator/user/createValidator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <workItem from="1735655592063" duration="761000" />
       <workItem from="1735747755585" duration="2401000" />
       <workItem from="1735751801132" duration="2517000" />
-      <workItem from="1735837820192" duration="1121000" />
+      <workItem from="1735837820192" duration="4399000" />
     </task>
     <task id="LOCAL-00001" summary="Rimozione activitySchema">
       <option name="closed" value="true" />
@@ -101,7 +100,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735752209466</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Validazione requisiti password">
+      <option name="closed" value="true" />
+      <created>1735839124483</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1735839124483</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rimozione activitySchema" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rimozione activitySchema" />
+    <MESSAGE value="Validazione requisiti password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validazione requisiti password" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
