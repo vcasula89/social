@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="ignorelist">
+    <list default="true" id="adf6324a-a7b0-41cb-be9d-50e8a6268115" name="Changes" comment="Rimozione activitySchema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validator/user/createValidator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/validator/user/createValidator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,11 +22,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -36,32 +32,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Node.js.createUserController.js.executor": "Debug",
-    "Node.js.server.js.executor": "Run",
-    "Node.js.userSchema.js.executor": "Run",
-    "Node.js.userService.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/ripristino-password",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "20.17.0",
-    "javascript.nodejs.core.library.typings.version": "20.17.10",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/casul/TNV/social/server.js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Node.js.createUserController.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.server.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.userSchema.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.userService.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.17.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.10&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/casul/TNV/social-fe&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\casul\TNV\social\src" />
@@ -70,11 +66,6 @@
       <recent name="C:\Users\casul\TNV\social\src\repository" />
       <recent name="C:\Users\casul\TNV\social\src\service" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -100,9 +91,7 @@
       <workItem from="1735655592063" duration="761000" />
       <workItem from="1735747755585" duration="2401000" />
       <workItem from="1735751801132" duration="2517000" />
-      <workItem from="1735837820192" duration="5204000" />
-      <workItem from="1735899628156" duration="7000" />
-      <workItem from="1735910317162" duration="767000" />
+      <workItem from="1735837820192" duration="1121000" />
     </task>
     <task id="LOCAL-00001" summary="Rimozione activitySchema">
       <option name="closed" value="true" />
@@ -112,23 +101,7 @@
       <option name="project" value="LOCAL" />
       <updated>1735752209466</updated>
     </task>
-    <task id="LOCAL-00002" summary="Validazione requisiti password">
-      <option name="closed" value="true" />
-      <created>1735839124483</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1735839124483</updated>
-    </task>
-    <task id="LOCAL-00003" summary="predisposizione rotte di ripristino password">
-      <option name="closed" value="true" />
-      <created>1735843206664</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1735843206664</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,19 +112,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/feature/ripristino-password" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -159,9 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Rimozione activitySchema" />
-    <MESSAGE value="Validazione requisiti password" />
-    <MESSAGE value="predisposizione rotte di ripristino password" />
-    <option name="LAST_COMMIT_MESSAGE" value="predisposizione rotte di ripristino password" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rimozione activitySchema" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
