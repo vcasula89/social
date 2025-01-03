@@ -78,7 +78,7 @@ const publicKey = '-----BEGIN PUBLIC KEY-----\n'+
 
 const mailConfig = {
   senderAddress: 'valentina.casula70@gmail.com',
-  smtpPassword: 'gfnigfsqwzwwdnoz',
+  smtpPassword: '****************',
   subject: 'todolist registration',
   host: 'smtp.gmail.com',
   port: 465,
