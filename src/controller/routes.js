@@ -4,6 +4,7 @@
 
 import createUserValidator from '../validator/user/createValidator.js'
 import loginValidator from '../validator/user/loginValidator.js'
+import resetPasswordValidator from '../validator/user/resetPasswordValidator.js'
 
 /**
  * USER CONTROLLERS
@@ -27,7 +28,7 @@ const setup = (app) => {
     app.get('/password-reset/check-restore-token/:restoreToken', validRestoreTokenController)
 
     //aggiorno la password per l'utente
-    //app.post('/user/reset-password/:id/:restoreToken', resetPasswordValidator, updateUserPasswordController);
+    app.post('/user/reset-password', resetPasswordValidator, updateUserPasswordController);
     
     //definire app.use dopo la route app.post, app.patch
     app.use((err, req, res, next) => {
