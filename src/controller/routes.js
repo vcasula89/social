@@ -11,6 +11,8 @@ import loginValidator from '../validator/user/loginValidator.js'
 import createUserController from './user/createUserController.js'
 import checkUserMailController from './user/checkUserMailController.js'
 import loginController from './user/loginController.js';
+import recoveryPasswordController from "./user/recoveryPasswordController.js";
+import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
 
 const setup = (app) => {
     app.post('/user', createUserValidator, createUserController);
@@ -19,10 +21,10 @@ const setup = (app) => {
 
 
     // controllo e spedico l'eventuale link di ripristino password sul FE
-    //app.get('/user/recovery-password/:email' , recoveryPasswordController);
+    app.get('/user/recovery-password/:email' , recoveryPasswordController);
 
     //controllo che il token di reset password sia ancora valido e lo dico al FE
-    //app.get('/user/:id/restore/:restoreToken', validRestoreTokenController)
+    app.get('/password-reset/check-restore-token/:restoreToken', validRestoreTokenController)
 
     //aggiorno la password per l'utente
     //app.post('/user/reset-password/:id/:restoreToken', resetPasswordValidator, updateUserPasswordController);

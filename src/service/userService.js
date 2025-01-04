@@ -45,6 +45,16 @@ const sendRegistrationMail = async (email, link) => {
 	return await userRepo.confirmRegistration(id, token);
   }
 
+	const getUserByEmail = async (email) => {
+		try {
+			const user =  await userRepo.getByEmail(email);
+			return user;
+		}catch(err) {
+			throw err;
+		}
+
+	}
+
   const login = async (email, password) => {
 	const user =  await userRepo.getByEmail(email);
   
@@ -61,4 +71,5 @@ const sendRegistrationMail = async (email, link) => {
 	register,
 	confirmRegistration,
 	login,
+	  getUserByEmail,
   }

@@ -79,7 +79,8 @@ const publicKey = '-----BEGIN PUBLIC KEY-----\n'+
 const mailConfig = {
   senderAddress: 'valentina.casula70@gmail.com',
   smtpPassword: process.env.SMTP_PASSWORD,
-  subject: 'todolist registration',
+  subject: 'Conferma registrazione',
+  subjectResetpassword: 'Richiesta ripristino password',
   host: 'smtp.gmail.com',
   port: 465,
   secure: true, // true for 465, false for other ports
@@ -87,10 +88,14 @@ const mailConfig = {
 
 }
 
+const frontEndAddress = 'http://localhost:5173/'
+
 export {
   activityStatus,
   userStatus,
   privateKey,
   publicKey,
   mailConfig,
+  frontEndAddress,
+
 }
