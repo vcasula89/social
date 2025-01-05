@@ -51,7 +51,7 @@ export default async(req,res) => {
         }
 
     }catch(err){
-        res.status(404).json({ message: 'Utente non registrato' });
+        res.status(200).json({ message: 'Utente non registrato' });
     }
 
 
