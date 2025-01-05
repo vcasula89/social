@@ -14,6 +14,7 @@ import checkUserMailController from './user/checkUserMailController.js'
 import loginController from './user/loginController.js';
 import recoveryPasswordController from "./user/recoveryPasswordController.js";
 import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
+import updateUserPasswordController from "./user/updateUserPasswordController.js";
 
 const setup = (app) => {
     app.post('/user', createUserValidator, createUserController);

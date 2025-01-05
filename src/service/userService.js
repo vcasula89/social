@@ -66,10 +66,25 @@ const sendRegistrationMail = async (email, link) => {
 	user.refreshToken = refreshToken
 	return user;
   }
-  
+
+  const getUserById = async (id) => {
+	  try {
+		  const user =  await userRepo.getById(id);
+		  return user;
+	  }catch(err) {
+		  throw err;
+	  }
+  }
+
+  const updateUser = async (id, props) => {
+	return await userRepo.modify(id, props);
+  }
+
   export {
 	register,
 	confirmRegistration,
 	login,
 	  getUserByEmail,
+	  getUserById,
+	  updateUser,
   }

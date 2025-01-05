@@ -50,9 +50,42 @@ const confirmRegistration = async (id, token) => {
     }
     return result.toJSON({versionKey:false})
   }
+
+  const getById = async (id) => {
+    const result = await userModel.findOne({_id: id})
+    if(!result) {
+      throw new NotFoundException('user not found', 100102)
+    }
+    return result.toJSON({versionKey:false})
+  }
+
+  const modify = async (id, props) => {
+    try {
+      const result = await userModel.findOneAndUpdate(
+          {_id: id},
+          props,
+          {new: true}
+      )
+      if(!result) {
+        throw new NotFoundException('user not found', 100102)
+      }
+
+      if(result.status === userStatus.active) {
+        return result.toJSON({versionKey:false})
+      }
+
+    } catch (e) {
+      if(e.code === 100102) {
+        throw e
+      }
+      throw new MongoInternalException(e.message, 100103)
+    }
+  }
   
   export default {
     add,
+    modify,
     confirmRegistration,
     getByEmail,
+    getById,
   }
