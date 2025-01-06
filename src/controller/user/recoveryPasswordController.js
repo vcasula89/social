@@ -1,4 +1,3 @@
-import userNormalizer from "../../normalizer/userNormalizer.js";
 import {getUserByEmail} from '../../service/userService.js'
 import cryptoUtils from "../../utils/cryptoUtils.js";
 import {createPasswordReset, sendResetPasswordMail} from "../../service/passwordResetService.js";
