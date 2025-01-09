@@ -1,10 +1,11 @@
 /**
  * VALIDATORS
  */
-
+import multer from 'multer';
 import createUserValidator from '../validator/user/createValidator.js'
 import loginValidator from '../validator/user/loginValidator.js'
 import resetPasswordValidator from '../validator/user/resetPasswordValidator.js'
+import createPostValidator from "../validator/post/createPostValidator.js";
 
 /**
  * USER CONTROLLERS
@@ -13,10 +14,21 @@ import createUserController from './user/createUserController.js'
 import checkUserMailController from './user/checkUserMailController.js'
 import loginController from './user/loginController.js';
 import recoveryPasswordController from "./user/recoveryPasswordController.js";
-import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
 import updateUserPasswordController from "./user/updateUserPasswordController.js";
 
+/**
+ * POST CONTROLLERS
+ */
+import createPostController from "./createPost/createPostController.js";
+
+/**
+ * TOKEN CONTROLLERS
+ */
+import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
+
 const setup = (app) => {
+    const upload = multer({ storage: multer.memoryStorage() });
+
     app.post('/user', createUserValidator, createUserController);
     app.get('/user/:id/confirm/:registrationToken',checkUserMailController);
     app.post('/user/login', loginValidator, loginController);
@@ -30,6 +42,9 @@ const setup = (app) => {
 
     //aggiorno la password per l'utente
     app.post('/user/reset-password', resetPasswordValidator, updateUserPasswordController);
+
+    app.post('/post/create-post', upload.single('image'), createPostValidator, createPostController);
+
     
     //definire app.use dopo la route app.post, app.patch
     app.use((err, req, res, next) => {

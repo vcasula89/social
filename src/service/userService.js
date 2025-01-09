@@ -81,9 +81,9 @@ const sendRegistrationMail = async (email, link) => {
   }
 
   export {
-	register,
-	confirmRegistration,
-	login,
+	  register,
+	  confirmRegistration,
+	  login,
 	  getUserByEmail,
 	  getUserById,
 	  updateUser,
