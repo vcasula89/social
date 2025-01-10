@@ -43,6 +43,8 @@ const setup = (app) => {
     //aggiorno la password per l'utente
     app.post('/user/reset-password', resetPasswordValidator, updateUserPasswordController);
 
+    //API per creazione post. Presenza di middleware di Multer per lavorare il file nel controller; posso quindi codificare
+    //il file su mongoDB
     app.post('/post/create-post', upload.single('image'), createPostValidator, createPostController);
 
     
