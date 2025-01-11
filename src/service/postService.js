@@ -9,6 +9,16 @@ const createPost = async (post) => {
         throw error;
     }
 }
+
+const getPostList = async (pageSize, filter)=>{
+    try{
+        const posts = await postRepo.getPostList(pageSize, filter);
+        return posts;
+    }catch(error){
+        throw error;
+    }
+}
 export{
     createPost,
+    getPostList
 }

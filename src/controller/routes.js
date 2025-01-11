@@ -19,7 +19,8 @@ import updateUserPasswordController from "./user/updateUserPasswordController.js
 /**
  * POST CONTROLLERS
  */
-import createPostController from "./createPost/createPostController.js";
+import createPostController from "./post/createPostController.js";
+import  getPostController from "./post/getPostController.js"
 
 /**
  * TOKEN CONTROLLERS
@@ -46,6 +47,8 @@ const setup = (app) => {
     //API per creazione post. Presenza di middleware di Multer per lavorare il file nel controller; posso quindi codificare
     //il file su mongoDB
     app.post('/post/create-post', upload.single('image'), createPostValidator, createPostController);
+
+    app.get('/posts', getPostController);
 
     
     //definire app.use dopo la route app.post, app.patch

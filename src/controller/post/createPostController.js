@@ -1,4 +1,4 @@
-import { createPost } from "../../service/createPostService.js";
+import { createPost } from "../../service/postService.js";
 
 
 export default async (req, res) => {
