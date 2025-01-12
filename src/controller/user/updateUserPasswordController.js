@@ -20,7 +20,7 @@ export default async(req,res) =>{
             const  {password, salt} = cryptoUtils.hashPassword(newPassword);
 
             // prende in ingresso come primo argomento lo userId che risiede come proprietà dentro passwordReset
-            // mentre come secondo argomento ler properties del record a db da aggiornare
+            // mentre come secondo argomento le properties del record a db da aggiornare
             await updateUser(passwordReset.userId, {
                 password: password,
                 salt: salt

@@ -1,5 +1,6 @@
 import postRepo from "../repository/postRepository.js";
 
+
 const createPost = async (post) => {
     try{
 
@@ -18,7 +19,22 @@ const getPostList = async (pageSize, filter)=>{
         throw error;
     }
 }
+
+const getPostById = async (postId) => {
+    try{
+        const post = await postRepo.getById(postId);
+        return post;
+    }catch(error){
+        throw error;
+    }
+}
+
+const updatePost = async (postId, props) => {
+    return await postRepo.modify(postId, props);
+}
 export{
     createPost,
-    getPostList
+    getPostList,
+    getPostById,
+    updatePost,
 }

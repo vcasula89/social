@@ -26,6 +26,7 @@ import  getPostController from "./post/getPostController.js"
  * TOKEN CONTROLLERS
  */
 import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
+import postLikeController from "./post/postLikeController.js";
 
 const setup = (app) => {
     const upload = multer({ storage: multer.memoryStorage() });
@@ -49,6 +50,8 @@ const setup = (app) => {
     app.post('/post/create-post', upload.single('image'), createPostValidator, createPostController);
 
     app.get('/posts', getPostController);
+
+    app.post('/post/like', postLikeController);
 
     
     //definire app.use dopo la route app.post, app.patch
