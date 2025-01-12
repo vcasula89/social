@@ -20,13 +20,16 @@ import updateUserPasswordController from "./user/updateUserPasswordController.js
  * POST CONTROLLERS
  */
 import createPostController from "./post/createPostController.js";
-import  getPostController from "./post/getPostController.js"
+import getPostController from "./post/getPostController.js"
 
 /**
  * TOKEN CONTROLLERS
  */
 import validRestoreTokenController from "./passwordReset/validRestoreTokenController.js";
 import postLikeController from "./post/postLikeController.js";
+import createCommentController from "./comment/createCommentController.js";
+import deleteCommentController from "./comment/deleteCommentController.js";
+import updateCommentController from "./comment/updateCommentController.js";
 
 const setup = (app) => {
     const upload = multer({ storage: multer.memoryStorage() });
@@ -52,6 +55,13 @@ const setup = (app) => {
     app.get('/posts', getPostController);
 
     app.post('/post/like', postLikeController);
+
+    app.post('/comment', createCommentController);
+
+    app.patch('/comment/:commentId', updateCommentController);
+
+    app.delete('/comment/:commentId', deleteCommentController);
+
 
     
     //definire app.use dopo la route app.post, app.patch
