@@ -30,6 +30,7 @@ import postLikeController from "./post/postLikeController.js";
 import createCommentController from "./comment/createCommentController.js";
 import deleteCommentController from "./comment/deleteCommentController.js";
 import updateCommentController from "./comment/updateCommentController.js";
+import checkAuthorizationMiddleware from "../middleware/checkAuthorizationMiddleware.js";
 
 const setup = (app) => {
     const upload = multer({ storage: multer.memoryStorage() });
@@ -50,17 +51,17 @@ const setup = (app) => {
 
     //API per creazione post. Presenza di middleware di Multer per lavorare il file nel controller; posso quindi codificare
     //il file su mongoDB
-    app.post('/post/create-post', upload.single('image'), createPostValidator, createPostController);
+    app.post('/post/create-post', checkAuthorizationMiddleware, upload.single('image'), createPostValidator, createPostController);
 
     app.get('/posts', getPostController);
 
-    app.post('/post/like', postLikeController);
+    app.post('/post/like', checkAuthorizationMiddleware, postLikeController);
 
-    app.post('/comment', createCommentController);
+    app.post('/comment',checkAuthorizationMiddleware, createCommentController);
 
-    app.patch('/comment/:commentId', updateCommentController);
+    app.patch('/comment/:commentId',checkAuthorizationMiddleware, updateCommentController);
 
-    app.delete('/comment/:commentId', deleteCommentController);
+    app.delete('/comment/:commentId',checkAuthorizationMiddleware, deleteCommentController);
 
 
     
