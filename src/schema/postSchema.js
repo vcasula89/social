@@ -2,12 +2,13 @@ import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 const postSchema = new Schema({
-        userId: {type: Schema.Types.ObjectId, default: null},
+        userId: {type: Schema.Types.ObjectId, ref: "users"},
         title: String,
         image: Buffer,
         body: String,
         likesCounter: Number,
         commentsCounter: Number,
+        comments: [{ type: Schema.Types.ObjectId, ref: 'comments' }]
 
     },
     {

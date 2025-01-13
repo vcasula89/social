@@ -8,10 +8,13 @@ export default async (req, res) => {
         const createdComment = await createComment(userId, postId, commentText);
 
         if (createdComment != null) {
-//se il record è stato salvato a DB, il contatore dei commenti per quel post sarà incrementato di un'unità.
+            //se il record è stato salvato a DB, il contatore dei commenti per quel post sarà incrementato di un'unità.
             const post = await getPostById(postId);
             const commentCounter = post.commentsCounter + 1;
-            await updatePost(postId, {commentsCounter: commentCounter})
+            await updatePost(postId, {
+                commentsCounter: commentCounter,
+                $push: { comments: createdComment._id }
+            })
                 .then(() => {
 
                     //è una promise, quindi dentro then troverò il success dell'operazione

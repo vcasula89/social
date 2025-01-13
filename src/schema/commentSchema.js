@@ -2,8 +2,8 @@ import mongoose, {Schema} from "mongoose";
 
 const commentSchema = new Schema({
 
-        userId: {type: Schema.Types.ObjectId, default: null},
-        postId: {type: Schema.Types.ObjectId, default: null},
+        userId: {type: Schema.Types.ObjectId, ref: 'users'},
+        postId: { type: Schema.Types.ObjectId, ref: 'posts' },
         commentText: String,
 
     },

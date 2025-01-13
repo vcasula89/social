@@ -15,7 +15,22 @@ const add = async (content) => {
 }
 
 const getPostList = async (pageSize, filter) => {
-    const result = await postModel.find(filter).sort({ createdAt: -1 }).limit(pageSize);
+    const result = await postModel
+        .find(filter)
+        .populate([
+            {
+                path:'userId',
+                select:'displayName createdAt',
+            },
+            {
+                path: 'comments',
+                populate: {
+                    path: 'userId',
+                    select: 'displayName',
+            },
+        }])
+        .sort({ createdAt: -1 })
+        .limit(pageSize);
     return result;
 }
 
