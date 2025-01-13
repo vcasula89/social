@@ -3,7 +3,10 @@ import {getPostById, updatePost} from "../../service/postService.js";
 
 export default async (req, res) => {
     try {
-        const {userId, postId, commentText} = req.body;
+        //parametri presi dalla req body
+        const { postId, commentText } = req.body;
+        //parametro reso disponibile dal middleware dopo la login
+        const userId = req.userId;
 
         const createdComment = await createComment(userId, postId, commentText);
 

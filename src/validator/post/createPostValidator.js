@@ -21,8 +21,7 @@ export default [
                     }),
             }),
 
-            body: Joi.string().required().max(200),
-            userId: Joi.string().required(),
+            body: Joi.string().required().max(200)
 
         })
     ),

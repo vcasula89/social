@@ -1,13 +1,22 @@
 import {getCommentById,updateComment} from "../../service/commentService.js";
+import UnauthorizedException from "../../exception/UnathorizedException.js";
 
 
 export default async(req,res) =>{
     try{
         const commentId = req.params['commentId'];
         const {commentText} = req.body;
+        const userId = req.userId;
+
+
 
         const comment= await getCommentById(commentId);
+
         if(comment != null){
+            //verifico che l'utente loggato che effettua la chiamata di modifica sia lo stesso che ha creato il commento
+            if(userId !== comment.userId._id.toString()){
+                throw new UnauthorizedException('Unauthorized', 401)
+            }
             await updateComment(commentId,{commentText:commentText})
                 .then(() => {
 

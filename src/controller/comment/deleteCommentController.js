@@ -1,11 +1,17 @@
 import { deleteComment,getCommentById } from "../../service/commentService.js";
 import {getPostById, updatePost} from "../../service/postService.js";
+import UnauthorizedException from "../../exception/UnathorizedException.js";
 
 export default async (req, res) => {
     try {
         const commentId = req.params['commentId'];
         const comment = await getCommentById(commentId);
         const postId = comment.postId;
+        const userId = req.userId;
+        //verifico che l'utente loggato che effettua la chiamata di cancellazione sia lo stesso che ha creato il commento
+        if(userId !== comment.userId._id.toString()){
+            throw new UnauthorizedException('Unauthorized', 401)
+        }
 
         const resultDelete = await deleteComment(commentId);
 

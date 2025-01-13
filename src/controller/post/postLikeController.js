@@ -3,7 +3,8 @@ import {getPostById, updatePost} from "../../service/postService.js";
 
 
 export default async(req,res) => {
-    const {userId, postId} = req.body;
+    const {postId} = req.body;
+    const userId = req.userId;
     //memorizzo all'interno di una variabile il risultato della funzione "getLikeByUserIdAndPostId". Quest'ultima serve a controllare,
     //nel record a DB, se l'utente abbia già messo like ad un determinato post.
     const like = await getLikeByUserIdAndPostId(userId, postId);

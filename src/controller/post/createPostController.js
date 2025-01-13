@@ -3,7 +3,10 @@ import { createPost } from "../../service/postService.js";
 
 export default async (req, res) => {
     try {
-        const {title, body, userId} = req.body;
+        //parametri presi dal req body
+        const {title, body} = req.body;
+        //parametro che viene preso solo login
+        const userId = req.userId;
         let imageBinary = null;
 
         // Verifica della presenza dell'immagine e conversione in binario
