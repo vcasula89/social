@@ -32,6 +32,8 @@ import deleteCommentController from "./comment/deleteCommentController.js";
 import updateCommentController from "./comment/updateCommentController.js";
 import checkAuthorizationMiddleware from "../middleware/checkAuthorizationMiddleware.js";
 import checkIfUserIsLoggedMiddleware from "../middleware/checkIfUserIsLoggedMiddleware.js";
+import createCommentValidator from "../validator/comment/createCommentValidator.js";
+
 
 const setup = (app) => {
     const upload = multer({ storage: multer.memoryStorage() });
@@ -58,7 +60,7 @@ const setup = (app) => {
 
     app.post('/post/like', checkAuthorizationMiddleware, postLikeController);
 
-    app.post('/comment',checkAuthorizationMiddleware, createCommentController);
+    app.post('/comment',checkAuthorizationMiddleware, createCommentValidator, createCommentController);
 
     app.patch('/comment/:commentId',checkAuthorizationMiddleware, updateCommentController);
 
