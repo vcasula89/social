@@ -30,7 +30,8 @@ const getPostList = async (pageSize, filter) => {
             },
         }])
         .sort({ createdAt: -1 })
-        .limit(pageSize);
+        .limit(pageSize)
+        .lean();
     return result;
 }
 

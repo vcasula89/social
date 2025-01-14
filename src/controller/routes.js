@@ -31,6 +31,7 @@ import createCommentController from "./comment/createCommentController.js";
 import deleteCommentController from "./comment/deleteCommentController.js";
 import updateCommentController from "./comment/updateCommentController.js";
 import checkAuthorizationMiddleware from "../middleware/checkAuthorizationMiddleware.js";
+import checkIfUserIsLoggedMiddleware from "../middleware/checkIfUserIsLoggedMiddleware.js";
 
 const setup = (app) => {
     const upload = multer({ storage: multer.memoryStorage() });
@@ -53,7 +54,7 @@ const setup = (app) => {
     //il file su mongoDB
     app.post('/post/create-post', checkAuthorizationMiddleware, upload.single('image'), createPostValidator, createPostController);
 
-    app.get('/posts', getPostController);
+    app.get('/posts', checkIfUserIsLoggedMiddleware, getPostController);
 
     app.post('/post/like', checkAuthorizationMiddleware, postLikeController);
 
