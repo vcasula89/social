@@ -1,4 +1,4 @@
-import userService from '../../service/userService.js';
+import { updateAvatar } from '../../service/userService.js';
 import randomAvatar from '../../utils/randomAvatar.js';
 
 const updateAvatarController = async (req, res) => {
@@ -7,7 +7,7 @@ const updateAvatarController = async (req, res) => {
         const avatarUrl = randomAvatar();  // Genera un avatar casuale obbligatoriamente
 
         // Aggiorna l'utente con l'avatar generato
-        const updatedUser = await userService.updateAvatar(userId, avatarUrl);
+        const updatedUser = await updateAvatar(userId, avatarUrl);
 
         res.status(200).json(updatedUser);
     } catch (error) {
