@@ -7,5 +7,9 @@ export default (user) => {
       out.accessToken = user.accessToken;
       out.refreshToken = user.refreshToken;
     }
+
+    if(user.avatar) {
+      out.avatar = user.avatar;
+    }
     return out
   }

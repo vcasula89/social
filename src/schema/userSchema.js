@@ -1,6 +1,8 @@
 import { userStatus } from "../const/const.js";
 import { Schema } from "mongoose";
 import mongoose from "mongoose";
+import randomAvatar from '../utils/randomAvatar.js';
+
 const userSchema = new Schema({
     email: {type: String, index: { unique: true }},
     displayName: String,
@@ -8,6 +10,10 @@ const userSchema = new Schema({
     salt: String,
     registrationToken: String,
     status: { type: String, default: userStatus.pending },
+    avatar: { 
+      type: String, 
+      default: randomAvatar()  // Genera un avatar casuale di default
+    }
   },
   {
     timestamps: {

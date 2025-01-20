@@ -81,6 +81,22 @@ const confirmRegistration = async (id, token) => {
       throw new MongoInternalException(e.message, 100103)
     }
   }
+
+  const updateAvatar = async (userId, avatarUrl) => {
+    try {
+      const result = await userModel.findOneAndUpdate(
+        {_id: userId},
+        { avatar: avatarUrl },
+        { new: true }
+      )
+      if(!result) {
+        throw new NotFoundException('user not found', 100102)
+      }
+      return result.toJSON({versionKey:false});
+    } catch (e) {
+      throw new MongoInternalException(e.message, 100103)
+    }
+  }
   
   export default {
     add,
@@ -88,4 +104,5 @@ const confirmRegistration = async (id, token) => {
     confirmRegistration,
     getByEmail,
     getById,
+    updateAvatar
   }

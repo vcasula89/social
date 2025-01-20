@@ -3,12 +3,14 @@ import cryptoUtils from '../utils/cryptoUtils.js'
 import mailer from 'nodemailer';
 import {mailConfig} from '../const/const.js';
 import UnauthorizedException from "../exception/UnathorizedException.js";
+import randomAvatar from '../utils/randomAvatar.js';
 
 const register = async (content) => {
   const  {password, salt} = cryptoUtils.hashPassword(content.password)
   content.password = password;
   content.salt = salt;
   content.registrationToken = cryptoUtils.generateUniqueCode(10)
+  content.avatar = randomAvatar();
   const result =  await userRepo.add(content);
   await sendRegistrationMail(content.email,
     buildRegistrationLink(result._id, content.registrationToken))
@@ -80,6 +82,14 @@ const sendRegistrationMail = async (email, link) => {
 	return await userRepo.modify(id, props);
   }
 
+  const updateAvatar = async (userId, avatarUrl) => {
+	return await userRepo.updateAvatar(userId, avatarUrl);
+  }
+  
+  const generateRandomAvatar = () => {
+	return randomAvatar();
+  }
+
   export {
 	  register,
 	  confirmRegistration,
@@ -87,4 +97,6 @@ const sendRegistrationMail = async (email, link) => {
 	  getUserByEmail,
 	  getUserById,
 	  updateUser,
+	  updateAvatar,
+      generateRandomAvatar
   }

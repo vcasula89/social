@@ -15,6 +15,7 @@ import checkUserMailController from './user/checkUserMailController.js'
 import loginController from './user/loginController.js';
 import recoveryPasswordController from "./user/recoveryPasswordController.js";
 import updateUserPasswordController from "./user/updateUserPasswordController.js";
+import updateAvatarController from './user/updateAvatarController.js';
 
 /**
  * POST CONTROLLERS
@@ -65,6 +66,10 @@ const setup = (app) => {
     app.patch('/comment/:commentId',checkAuthorizationMiddleware, updateCommentController);
 
     app.delete('/comment/:commentId',checkAuthorizationMiddleware, deleteCommentController);
+
+    //Route per l'update dell'avatar
+
+    app.post('/user/:userId/avatar', checkAuthorizationMiddleware, updateAvatarController);
 
 
     
