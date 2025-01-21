@@ -33,6 +33,7 @@ import updateCommentController from "./comment/updateCommentController.js";
 import checkAuthorizationMiddleware from "../middleware/checkAuthorizationMiddleware.js";
 import checkIfUserIsLoggedMiddleware from "../middleware/checkIfUserIsLoggedMiddleware.js";
 import createCommentValidator from "../validator/comment/createCommentValidator.js";
+import getPostImageController from "./post/getPostImageController.js";
 
 
 const setup = (app) => {
@@ -65,6 +66,8 @@ const setup = (app) => {
     app.patch('/comment/:commentId',checkAuthorizationMiddleware, updateCommentController);
 
     app.delete('/comment/:commentId',checkAuthorizationMiddleware, deleteCommentController);
+
+    app.get('/post/image/:postId', getPostImageController);
 
 
     
