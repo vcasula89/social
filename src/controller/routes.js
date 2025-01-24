@@ -16,6 +16,8 @@ import loginController from './user/loginController.js';
 import recoveryPasswordController from "./user/recoveryPasswordController.js";
 import updateUserPasswordController from "./user/updateUserPasswordController.js";
 import updateAvatarController from './user/updateAvatarController.js';
+import getAvatarController from './user/getAvatarByUserId.js';
+import randomAvatar from '../utils/randomAvatar.js';
 
 /**
  * POST CONTROLLERS
@@ -42,6 +44,8 @@ const setup = (app) => {
     app.post('/user', createUserValidator, createUserController);
     app.get('/user/:id/confirm/:registrationToken',checkUserMailController);
     app.post('/user/login', loginValidator, loginController);
+    app.get('/user/:userId/avatar', randomAvatar);
+    app.get('/user/:userId/avatar', getAvatarController);
 
 
     // controllo e spedico l'eventuale link di ripristino password sul FE

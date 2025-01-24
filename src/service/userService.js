@@ -86,9 +86,6 @@ const sendRegistrationMail = async (email, link) => {
 	return await userRepo.updateAvatar(userId, avatarUrl);
   }
   
-  const generateRandomAvatar = () => {
-	return randomAvatar();
-  }
 
   export {
 	  register,
@@ -98,5 +95,4 @@ const sendRegistrationMail = async (email, link) => {
 	  getUserById,
 	  updateUser,
 	  updateAvatar,
-      generateRandomAvatar
   }
