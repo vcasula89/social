@@ -52,7 +52,15 @@ const modify = async (id, props) => {
             {_id: id},
             props,
             {new: true}
-        )
+        ).populate([
+
+            {
+                path: 'comments',
+                populate: {
+                    path: 'userId',
+                    select: 'displayName',
+                },
+            }])
         if(!result) {
             throw new NotFoundException('post not found', 100102)
         }

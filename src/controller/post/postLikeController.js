@@ -26,10 +26,10 @@ export default async(req,res) => {
         const post = await getPostById(postId);
         const likeCounter = post.likesCounter + 1;
         await updatePost(postId, {likesCounter: likeCounter})
-            .then(()=>{
+            .then(data=>{
 
                 //è una promise, quindi dentro then troverò il success dell'operazione
-                res.status(200).json();
+                res.status(200).json(data);
             })
             .catch((err)=>{
                 //è una promise, quindi dentro catch troverò l'eccezione dell'operazione di salvataggio
@@ -40,10 +40,10 @@ export default async(req,res) => {
         const post = await getPostById(postId);
         const likeCounter = post.likesCounter - 1;
         await updatePost(postId, {likesCounter: likeCounter})
-            .then(()=>{
+            .then(data=>{
 
                 //è una promise, quindi dentro then troverò il success dell'operazione
-                res.status(200).json();
+                res.status(200).json(data);
             })
             .catch((err)=>{
                 //è una promise, quindi dentro catch troverò l'eccezione dell'operazione di salvataggio
