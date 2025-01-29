@@ -1,18 +1,29 @@
-import { updateAvatar } from '../../service/userService.js';
 import randomAvatar from '../../utils/randomAvatar.js';
 
 const updateAvatarController = async (req, res) => {
     try {
         const userId = req.params.userId;
-        const avatarUrl = randomAvatar();  // Genera un avatar casuale obbligatoriamente
+        const avatarUrl = randomAvatar(); 
 
-        // Aggiorna l'utente con l'avatar generato
-        const updatedUser = await updateAvatar(userId, avatarUrl);
+        if (!avatarUrl) {
+            return res.status(400).json({ error: 'Impossibile generare l\'avatar' });
+        }
 
-        res.status(200).json(updatedUser);
+       
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            { avatar: avatarUrl },
+            { new: true } 
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ error: 'Utente non trovato' });
+        }
+
+        res.status(200).json({ message: 'Avatar aggiornato con successo', avatar: avatarUrl });
     } catch (error) {
-        console.error('Errore nel aggiornare l\'avatar:', error);
-        res.status(500).json({ error: 'Errore nel aggiornare l\'avatar' });
+        console.error('Errore nell\'aggiornare l\'avatar:', error);
+        res.status(500).json({ error: 'Errore interno nel server' });
     }
 };
 

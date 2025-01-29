@@ -77,8 +77,8 @@ const publicKey = '-----BEGIN PUBLIC KEY-----\n'+
 '-----END PUBLIC KEY-----';
 
 const mailConfig = {
-  senderAddress: 'valentina.casula70@gmail.com',
-  smtpPassword: process.env.SMTP_PASSWORD,
+  senderAddress: 'lauragarau23@gmail.com',
+  smtpPassword: 'afvomhyuithirjhm',
   subject: 'Conferma registrazione',
   subjectResetpassword: 'Richiesta ripristino password',
   host: 'smtp.gmail.com',
