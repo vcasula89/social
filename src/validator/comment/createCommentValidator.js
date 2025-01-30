@@ -6,7 +6,7 @@ export default [
     validator.body(
         Joi.object().keys({
             commentText: Joi.string().required().max(500),
-            commentUserId: Joi.string().required(),
+
             postId: Joi.string().required(),
         })
     ),

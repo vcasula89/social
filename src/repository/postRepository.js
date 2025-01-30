@@ -17,6 +17,7 @@ const add = async (content) => {
 const getPostList = async (pageSize, filter) => {
     const result = await postModel
         .find(filter)
+        .select('+image')
         .populate([
             {
                 path:'userId',
@@ -32,7 +33,12 @@ const getPostList = async (pageSize, filter) => {
         .sort({ createdAt: -1 })
         .limit(pageSize)
         .lean();
-    return result;
+
+    return result.map(post => ({
+        ...post,
+        image: post.image !== null ? "/post/image/"+post._id:null,
+    }));
+
 }
 
 const getById = async (id) => {
@@ -46,7 +52,15 @@ const modify = async (id, props) => {
             {_id: id},
             props,
             {new: true}
-        )
+        ).populate([
+
+            {
+                path: 'comments',
+                populate: {
+                    path: 'userId',
+                    select: 'displayName',
+                },
+            }])
         if(!result) {
             throw new NotFoundException('post not found', 100102)
         }

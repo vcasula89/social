@@ -36,6 +36,7 @@ import updateCommentController from "./comment/updateCommentController.js";
 import checkAuthorizationMiddleware from "../middleware/checkAuthorizationMiddleware.js";
 import checkIfUserIsLoggedMiddleware from "../middleware/checkIfUserIsLoggedMiddleware.js";
 import createCommentValidator from "../validator/comment/createCommentValidator.js";
+import getPostImageController from "./post/getPostImageController.js";
 
 
 const setup = (app) => {
@@ -74,6 +75,7 @@ const setup = (app) => {
     //Route per l'update dell'avatar
 
     app.post('/user/:userId/avatar', updateAvatarController);
+    app.get('/post/image/:postId', getPostImageController);
 
 
     
