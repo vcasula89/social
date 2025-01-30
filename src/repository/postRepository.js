@@ -21,13 +21,13 @@ const getPostList = async (pageSize, filter) => {
         .populate([
             {
                 path:'userId',
-                select:'displayName createdAt',
+                select:'displayName avatar createdAt',
             },
             {
                 path: 'comments',
                 populate: {
                     path: 'userId',
-                    select: 'displayName',
+                    select: 'displayName avatar',
             },
         }])
         .sort({ createdAt: -1 })
@@ -42,7 +42,7 @@ const getPostList = async (pageSize, filter) => {
 }
 
 const getById = async (id) => {
-    const result = await postModel.findOne({_id:id});
+    const result = await postModel.findOne({_id:id}).populate("userId", "displayName avatar");
     return result;
 }
 
