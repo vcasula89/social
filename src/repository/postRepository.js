@@ -58,7 +58,7 @@ const modify = async (id, props) => {
                 path: 'comments',
                 populate: {
                     path: 'userId',
-                    select: 'displayName',
+                    select: 'displayName avatar',
                 },
             }])
         if(!result) {
