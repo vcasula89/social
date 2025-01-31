@@ -5,7 +5,7 @@ export default async (req, res) => {
     try {
         //parametri presi dal req body
         const {title, body} = req.body;
-        //parametro che viene preso solo login
+        //parametro che viene preso solo dopo login
         const userId = req.userId;
         let imageBinary = null;
 
