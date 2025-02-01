@@ -8,8 +8,6 @@ const postSchema = new Schema({
         body: String,
         likesCounter: Number,
         commentsCounter: Number,
-        comments: [{ type: Schema.Types.ObjectId, ref: 'comments' }]
-
     },
     {
         timestamps: {

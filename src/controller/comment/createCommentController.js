@@ -16,7 +16,6 @@ export default async (req, res) => {
             const commentCounter = post.commentsCounter + 1;
             await updatePost(postId, {
                 commentsCounter: commentCounter,
-                $push: { comments: createdComment._id }
             })
                 .then((data) => {
 
