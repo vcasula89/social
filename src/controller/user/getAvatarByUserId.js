@@ -1,3 +1,6 @@
+import {getUserById} from "../../service/userService.js";
+import randomAvatar from "../../utils/randomAvatar.js";
+
 const getAvatarController = async (req, res) => {
   try {
     const userId = req.params.userId;
