@@ -37,7 +37,7 @@ export default async(req,res) => {
                 await sendResetPasswordMail(email, linkDiRipristino)
                     .then(() => {
                         //in caso di success restitutisco il 200
-                        res.status(200).json({message: "Un link di ripristino password è stato inviato all\' indirizzo richiesto"})
+                        res.status(200).json({message: "Se l'utente è registrato, riceverà un link di ripristino password"})
                     })
                     .catch((error)=>{
                         //in caso di errore restituisco il messaggio dell'eccezione
